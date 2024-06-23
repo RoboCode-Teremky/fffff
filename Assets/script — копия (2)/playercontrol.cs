@@ -10,7 +10,7 @@ public class playercontrol : MonoBehaviour
     private float direction = 0f;
     private Rigidbody2D rb2d;
     [SerializeField] private int maxHP = 6;
-    private int currentHP;
+    public int currentHP;
     static public UnityEvent<int> hpChange = new UnityEvent<int>(); 
     [SerializeField] private Transform spawnPoint;
         void Start()
@@ -42,7 +42,7 @@ public class playercontrol : MonoBehaviour
         }
     }
     private void OnCollisionEnter2D(Collision2D other){
-        if(other.gameObject.CompareTag("spike")){
+        if(other.gameObject.CompareTag("spike") || other.gameObject.CompareTag("abyss")){
          transform.position = spawnPoint.position;  
          currentHP--;
          hpChange.Invoke(currentHP);
