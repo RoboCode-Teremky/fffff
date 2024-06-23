@@ -7,11 +7,11 @@ public class HealthBar : MonoBehaviour
 {
     [SerializeField] private GameObject imagePrefab;
     void OnEnable(){
-        FindAnyObjectByType<playercontrol>().GetComponent<playercontrol>().hpChange.AddListener(UpdateBar);
+        playercontrol.hpChange.AddListener(UpdateBar);
     }
-    void OnDisable(
-    ){
-        FindAnyObjectByType<playercontrol>().GetComponent<playercontrol>().hpChange.RemoveListener(UpdateBar);
+    void OnDisable()
+    {
+        playercontrol.hpChange.RemoveListener(UpdateBar);
     }
     public void UpdateBar(int hp){
         foreach(Transform child in transform){
