@@ -19,12 +19,12 @@ public class Finish : MonoBehaviour
     {
         
     }
-    //private void OnCollisionEnter2D(Collision2D other){
-   // if(other.gameOdject.CompareTag("Player")){
-   //  Time.timeScale = 0.0f;
-   //     menuPanel.SetActive(true);
-    //   statusText.text = "You win. My congratulations!!!!";
+    private void OnTriggerEnter2D(Collider2D other){
+    if(other.gameObject.CompareTag("Player")){
+        Time.timeScale = 0.0f;
+        menuPanel.SetActive(true);
+       statusText.text = "You win. My congratulations!!!!";
         
-  // }
-   // }
+   }
+    }
 }
