@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     bool chill = false;
     bool angry = false;
     bool goBack = false;
+    public int health;
+
 
     // Start is called before the first frame update
     void Start()
@@ -71,5 +73,11 @@ public class Enemy : MonoBehaviour
     }
     void GoBack(){
      transform.position = Vector2.MoveTowards(transform.position, point.position, speed * Time.deltaTime);
+    }
+    public void TakeDamage(int damage){
+      health -= damage;
+      if(health <= 0){
+          Destroy(gameObject);
+      }
     }
 }

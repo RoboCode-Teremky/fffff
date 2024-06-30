@@ -29,7 +29,7 @@ public class playercontrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float direction = Input.GetAxis("Horizontal");
+       float direction = Input.GetAxis("Horizontal");
        if(direction > 0f)
        {
         rb2d.velocity = new Vector2(direction * speed, rb2d.velocity.y);
@@ -41,7 +41,7 @@ public class playercontrol : MonoBehaviour
         transform.localScale = new Vector3(-1, 1);
        }
         foreach(RaycastHit2D rh2d in Physics2D.RaycastAll(transform.position, Vector2.down,1.5f)){
-            if(rh2d.collider.CompareTag("ground")&& Input.GetButtonDown("Jump")){
+            if(rh2d.collider.CompareTag("ground") && Input.GetButtonDown("Jump")){
                 rb2d.AddForce(Vector2.up*jumpForce,ForceMode2D.Impulse);
             }
         }

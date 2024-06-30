@@ -62,5 +62,14 @@ public class Menu : MonoBehaviour
         }
 
     }
+    public void GoToMenu(){
+        SceneManager.LoadScene(0);
+    }
+   // public void ExitGame(){
+        //Application.Quit();
+  //  }
+    //public void StartGameButton(){
+      //  SceneManager.LoadScene(1);
+    //}
 }
 
