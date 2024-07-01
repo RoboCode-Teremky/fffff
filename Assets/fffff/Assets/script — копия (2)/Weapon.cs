@@ -23,9 +23,11 @@ public class Weapon : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
         if(timeBTWShots <= 0){
         if(Input.GetMouseButton(0)){
-             Instantiate(Bullet, shotPoint.position, transform.rotation);
+            Quaternion bulletRotation = Quaternion.Euler(0f, 0f, rotZ);
+             Instantiate(Bullet, shotPoint.position, bulletRotation);
            timeBTWShots = startTimeBTWShots;
 
+        }
         }
         else{
             timeBTWShots -= Time.deltaTime;
@@ -35,5 +37,4 @@ public class Weapon : MonoBehaviour
     //{
     //    
    // }
-}
 }
